@@ -1,0 +1,7 @@
+{{ define "top-trakt" }}
+{{ range .ImageLinks }}
+<a href="{{ .Link }}">
+  <img src="{{ .ImageUrl }}" />
+</a>
+{{ end }}
+{{ end }}

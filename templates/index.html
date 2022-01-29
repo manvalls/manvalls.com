@@ -1,0 +1,454 @@
+{{ define "index" }}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/common/favicon.svg">
+  <base target="_blank">
+  <title>Manuel Valls Fernández</title>
+
+  <script>
+    function setLang(lang) {
+      document.cookie = "lang=" + lang + "; path=/; max-age=31536000";
+      location.reload();
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    img {
+      color: transparent;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .top-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .top-container>div {
+      width: 80%;
+    }
+
+    .language-selector {
+      margin: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .language-selector img {
+      height: 25px;
+      width: auto;
+    }
+
+    .language-selector img[alt] {
+      cursor: pointer;
+    }
+
+    .profile-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .profile-pic {
+      max-width: 250px;
+      width: 100%;
+    }
+
+    .profile-pic>img {
+      width: 80%;
+      border: 1px solid black;
+      padding: 1px;
+      margin: 10%;
+      height: auto;
+    }
+
+    .name {
+      max-width: 350px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .social {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 350px;
+    }
+
+    .social img {
+      width: 35px;
+      height: auto;
+      margin: 5px;
+    }
+
+    .hobbies {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hobbies>div {
+      margin-top: 20px;
+      max-width: 470px;
+      width: 100%;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px 50px;
+      margin-bottom: 50px;
+    }
+
+    div.videos {
+      width: 95%;
+      max-width: 500px;
+      margin-bottom: 50px;
+    }
+
+    .videos>iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9.75;
+    }
+
+    .quote {
+      max-width: 500px;
+      font-family: 'Special Elite', cursive;
+      margin-bottom: 50px;
+    }
+
+    .quote a {
+      color: black;
+      font-size: 0.8em;
+    }
+
+    .quotes-link {
+      position: relative;
+    }
+
+    .quotes-link img {
+      position: absolute;
+      right: 10px;
+      top: -10px;
+    }
+
+    div.watch-recommendations {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      width: 95%;
+      margin-bottom: 70px;
+    }
+
+    .watch-recommendations>img {
+      margin-bottom: 30px;
+    }
+
+    #top-trakt {
+      text-align: center;
+    }
+
+    #top-trakt img {
+      max-height: 150px;
+      width: auto;
+    }
+
+    .top-trakt-link {
+      position: relative;
+      width: 100%;
+    }
+
+    .top-trakt-link img {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+
+    #grouvee_widget_738705 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0px 3px;
+    }
+
+    #grouvee_widget_738705>h2 {
+      display: none;
+    }
+
+    div.videogames {
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      margin-bottom: 70px;
+    }
+
+    .videogames>img {
+      margin-bottom: 20px;
+    }
+
+    .videogames-link {
+      position: relative;
+      width: 100%;
+    }
+
+    .videogames-link img {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+    .gr_grid_branding {
+      display: none;
+    }
+
+    div.books {
+      max-width: 500px;
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .books>img {
+      margin-bottom: 20px;
+    }
+
+    .gr_grid_container {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      gap: 0px 5px;
+      flex-wrap: wrap;
+    }
+
+    #gr_grid_widget_1643220741 h2 {
+      display: none;
+    }
+
+    .books-link {
+      position: relative;
+      width: 100%;
+    }
+
+    .books-link img {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+    .hr {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .credits {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 300px;
+      margin-bottom: 70px;
+    }
+
+    .credits>img {
+      margin-bottom: 20px;
+    }
+
+    .credits>div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .credits a {
+      display: flex;
+    }
+
+    .credits a>img {
+      height: auto;
+      width: 70px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-container">
+    <div class="language-selector">
+      <img width="63" height="54" alt="Español" tabindex="0" onclick="setLang('es')"
+        src="/assets/common/es{{if eq .Locale `es`}}_selected{{end}}.svg" />
+      <img width="13" height="54" src="/assets/common/dot.svg" />
+      <img width="62" height="54" alt="English" tabindex="0" onclick="setLang('en')"
+        src="/assets/common/en{{if eq .Locale `en`}}_selected{{end}}.svg" />
+    </div>
+    <div class="profile-row">
+      <div class="profile-pic">
+        <img importance="high" width="250" height="250" src="{{ .ProfileImageURL }}" />
+      </div>
+      <div class="name-and-social">
+        <img width="1723" height="238" class="name" alt="Manuel Valls Fernández" src="/assets/common/nombre.svg" />
+        <div class="social">
+
+          <a href="https://www.facebook.com/mvallsfernandez/">
+            <img width="254" height="261" alt="Facebook" src="/assets/common/logos/facebook.svg" />
+          </a>
+
+          <a href="https://www.instagram.com/manvalls/">
+            <img width="252" height="260" alt="Instagram" src="/assets/common/logos/instagram.svg" />
+          </a>
+
+          <a href="https://www.linkedin.com/in/manvalls/">
+            <img width="225" height="233" alt="LinkedIn" src="/assets/common/logos/linkedin.svg" />
+          </a>
+
+          <a href="https://github.com/manvalls/">
+            <img width="236" height="233" alt="GitHub" src="/assets/common/logos/github.svg" />
+          </a>
+
+          <a href="https://open.spotify.com/user/41oflqp0vakkg21hgyl5i7p0c?si=41ad1e5129a442e7">
+            <img width="251" height="243" alt="Spotify" src="/assets/common/logos/spotify.svg" />
+          </a>
+
+          <a href="https://www.last.fm/user/manvalls">
+            <img width="211" height="198" alt="last.fm" src="/assets/common/logos/lastfm.svg" />
+          </a>
+
+          <a href="https://trakt.tv/users/manvalls">
+            <img width="216" height="232" alt="Trakt" src="/assets/common/logos/trakt.svg" />
+          </a>
+
+          <a href="https://goodreads.com/manvalls">
+            <img width="207" height="227" alt="goodreads" src="/assets/common/logos/goodreads.svg" />
+          </a>
+
+          <a href="https://www.grouvee.com/user/manvalls/">
+            <img width="182" height="209" alt="Grouvee" src="/assets/common/logos/grouvee.svg" />
+          </a>
+
+          <a
+            href="https://www.oculus.com/deeplink/?action=view&path=%2Fprofile%2F101811735605449&utm_medium=share&utm_source=oculus">
+            <img width="237" height="239" alt="Oculus" src="/assets/common/logos/oculus.svg" />
+          </a>
+
+          <a href="https://discordapp.com/users/568501799368261632">
+            <img width="217" height="218" alt="Discord" src="/assets/common/logos/discord.svg" />
+          </a>
+
+          <a href="https://steamcommunity.com/id/manvalls/">
+            <img width="219" height="220" alt="Steam" src="/assets/common/logos/steam.svg" />
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <div class="hobbies">
+      <img src="/assets/{{ .Locale }}/things_i_like.svg" />
+      <div>
+        <img src="/assets/{{ .Locale }}/coffee.svg" />
+        <img src="/assets/{{ .Locale }}/japanese.svg" />
+        <img src="/assets/{{ .Locale }}/computers.svg" />
+        <img src="/assets/{{ .Locale }}/vr.svg" />
+      </div>
+      <img src="/assets/{{ .Locale }}/about.svg" />
+      <div>
+        <img src="/assets/{{ .Locale }}/atheist.svg" />
+        <img src="/assets/{{ .Locale }}/bisexual.svg" />
+        <img style="height: auto;max-width: 145px;" src="/assets/{{ .Locale }}/open_marriage.svg" />
+        <img src="/assets/{{ .Locale }}/parent.svg" />
+      </div>
+    </div>
+    <div class="videos">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLkHTLEWBbz49m0ZUZ0B4hop9rkwDQGE12"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="quote">
+      <div id="gr_quote_body"></div>
+      <script async src="https://www.goodreads.com/quotes/widget/146308828-manuel-valls-fern-ndez?v=2"
+        type="text/javascript"></script>
+      <div class="quotes-link">
+        <a href="https://www.goodreads.com/quotes/list/146308828-manuel-valls-fern-ndez"><img
+            src="/assets/{{ .Locale }}/quotes.svg" /></a>
+      </div>
+    </div>
+    <div class="watch-recommendations">
+      <img src="/assets/{{ .Locale }}/favourite-movies.svg" />
+      <div id="top-trakt"></div>
+      <script async src="/top-trakt.js"></script>
+      <div class="top-trakt-link">
+        <a href="https://trakt.tv/users/manvalls/ratings/all/10/added"><img
+            src="/assets/{{ .Locale }}/more-favourite-movies.svg" /></a>
+      </div>
+    </div>
+    <div class="videogames">
+      <img src="/assets/{{ .Locale }}/favourite-games.svg" />
+      <div id="grouvee_widget_738705"></div>
+      <script async src="https://www.grouvee.com/widgets/shelf/738705/?number=15"></script>
+      <div class="videogames-link">
+        <a
+          href="https://www.grouvee.com/user/manvalls/shelves/738705-favourites/?utm_medium=api&utm_source=shelf_widget"><img
+            src="/assets/{{ .Locale }}/more-games.svg" /></a>
+      </div>
+    </div>
+    <div class="books">
+      <img src="/assets/{{ .Locale }}/favourite-books.svg" />
+      <div id="gr_grid_widget_1643220741"></div>
+      <script
+        src="https://www.goodreads.com/review/grid_widget/146308828.Manuel's%20favourites%20book%20montage?cover_size=medium&hide_link=&hide_title=&num_books=20&order=a&shelf=favourites&sort=date_added&widget_id=1643220741"></script>
+      <div class="books-link">
+        <a href="https://www.goodreads.com/user/show/146308828-manuel-valls-fern-ndez"><img
+            src="/assets/{{ .Locale }}/more-books.svg" /></a>
+      </div>
+    </div>
+    <div class="hr">
+      <img src="/assets/common/hr.svg" />
+    </div>
+    <div class="credits">
+      <img src="/assets/{{ .Locale }}/powered-by.svg" />
+      <div>
+        <a href="https://www.facebook.com/">
+          <img src="/assets/common/fb.svg" />
+        </a>
+        <a href="https://www.youtube.com/">
+          <img src="/assets/common/yt.svg" />
+        </a>
+        <a href="https://www.goodreads.com/">
+          <img src="/assets/common/gr.svg" />
+        </a>
+        <a href="https://www.themoviedb.org/">
+          <img src="/assets/common/tmdb.svg" />
+        </a>
+        <a href="https://www.trakt.tv/">
+          <img src="/assets/common/trakt.svg" />
+        </a>
+        <a href="https://www.grouvee.com/">
+          <img src="/assets/common/grouvee.png" />
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+{{ end }}
