@@ -72,11 +72,70 @@ func getProfileImage() string {
 	return profileImage
 }
 
+type Languages struct {
+	Spanish string
+	English string
+}
+
+type Social struct {
+	Facebook  string
+	Instagram string
+	Linkedin  string
+	Github    string
+	Spotify   string
+	Lastfm    string
+	Trakt     string
+	Goodreads string
+	Grouvee   string
+	Oculus    string
+	Discord   string
+	Steam     string
+}
+
+type Hobbies struct {
+	Title     string
+	Coffee    string
+	Japanese  string
+	LiveMusic string
+	VR        string
+}
+
+type About struct {
+	Title        string
+	Atheist      string
+	Bisexual     string
+	OpenMarriage string
+	Parent       string
+}
+
+type Misc struct {
+	MoreQuotes      string
+	FavouriteMovies string
+	MoreMovies      string
+	FavouriteGames  string
+	MoreGames       string
+	FavouriteBooks  string
+	MoreBooks       string
+	PoweredBy       string
+
+	Facebook  string
+	Youtube   string
+	Goodreads string
+	TMDB      string
+	Trakt     string
+	Grouvee   string
+}
+
 type PageData struct {
 	ProfileImageURL string
 	Locale          string
 	Title           string
 	Description     string
+	Languages
+	Social
+	Hobbies
+	About
+	Misc
 }
 
 var matcher = language.NewMatcher([]language.Tag{
@@ -124,6 +183,55 @@ func main() {
 				Locale:          locale,
 				Title:           "Manuel Valls Fernández",
 				Description:     "Hola! 😎 Aquí te dejo las cosas que me gustan, enlaces a mis redes sociales y otras mierdas, a seguir bien! 🤘",
+				Languages: Languages{
+					English: "English",
+					Spanish: "Español",
+				},
+				Social: Social{
+					Facebook:  "Facebook",
+					Instagram: "Instagram",
+					Linkedin:  "LinkedIn",
+					Github:    "GitHub",
+					Spotify:   "Spotify",
+					Lastfm:    "last.fm",
+					Trakt:     "Trakt",
+					Goodreads: "goodreads",
+					Grouvee:   "Grouvee",
+					Oculus:    "Oculus",
+					Discord:   "Discord",
+					Steam:     "Steam",
+				},
+				Hobbies: Hobbies{
+					Title:     "Cosas que me gustan:",
+					Coffee:    "Café de especialidad",
+					Japanese:  "Aprender Japonés",
+					LiveMusic: "Música en directo",
+					VR:        "Realidad virtual",
+				},
+				About: About{
+					Title:        "Sobre mí:",
+					Atheist:      "Ateo",
+					Bisexual:     "Bisexual",
+					OpenMarriage: "Matrimonio abierto",
+					Parent:       "Padre",
+				},
+				Misc: Misc{
+					MoreQuotes:      "Más citas",
+					FavouriteMovies: "Pelis y series favoritas:",
+					MoreMovies:      "Ver más",
+					FavouriteGames:  "Juegos favoritos:",
+					MoreGames:       "Más juegos",
+					FavouriteBooks:  "Libros favoritos:",
+					MoreBooks:       "Más libros",
+					PoweredBy:       "Con tecnología de:",
+
+					Facebook:  "Facebook",
+					Youtube:   "YouTube",
+					Goodreads: "Goodreads",
+					TMDB:      "Themoviedb",
+					Trakt:     "Trakt",
+					Grouvee:   "Grouvee",
+				},
 			}
 		case "en":
 			pageData = PageData{
@@ -131,6 +239,55 @@ func main() {
 				Locale:          locale,
 				Title:           "Manuel Valls Fernández",
 				Description:     "Hi there! 😎 Here you'll find things I like, social media links and some more random stuff, keep it up! 🤘",
+				Languages: Languages{
+					English: "English",
+					Spanish: "Español",
+				},
+				Social: Social{
+					Facebook:  "Facebook",
+					Instagram: "Instagram",
+					Linkedin:  "LinkedIn",
+					Github:    "GitHub",
+					Spotify:   "Spotify",
+					Lastfm:    "last.fm",
+					Trakt:     "Trakt",
+					Goodreads: "goodreads",
+					Grouvee:   "Grouvee",
+					Oculus:    "Oculus",
+					Discord:   "Discord",
+					Steam:     "Steam",
+				},
+				Hobbies: Hobbies{
+					Title:     "Things I like:",
+					Coffee:    "Specialty coffee",
+					Japanese:  "Learning Japanese",
+					LiveMusic: "Live music",
+					VR:        "Virtual reality",
+				},
+				About: About{
+					Title:        "About me:",
+					Atheist:      "Atheist",
+					Bisexual:     "Bisexual",
+					OpenMarriage: "Open marriage",
+					Parent:       "Parent",
+				},
+				Misc: Misc{
+					MoreQuotes:      "More quotes:",
+					FavouriteMovies: "Favourite movies and shows:",
+					MoreMovies:      "View more",
+					FavouriteGames:  "Favourite games:",
+					MoreGames:       "More games",
+					FavouriteBooks:  "Favourite books:",
+					MoreBooks:       "More books",
+					PoweredBy:       "Powered by:",
+
+					Facebook:  "Facebook",
+					Youtube:   "YouTube",
+					Goodreads: "Goodreads",
+					TMDB:      "Themoviedb",
+					Trakt:     "Trakt",
+					Grouvee:   "Grouvee",
+				},
 			}
 		}
 
