@@ -6,7 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/assets/common/favicon.svg">
   <base target="_blank">
-  <title>Manuel Valls Fernández</title>
+  <title>{{ .Title }}</title>
+  <meta name="description" content="{{ .Description }}">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:image" content="{{ .ProfileImageURL }}">
+  <meta property="og:description" content="{{ .Description }}">
 
   <script>
     function setLang(lang) {
@@ -14,9 +18,11 @@
       location.reload();
     }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
   <style>
     img {
       color: transparent;
@@ -306,7 +312,7 @@
         <img importance="high" width="250" height="250" src="{{ .ProfileImageURL }}" />
       </div>
       <div class="name-and-social">
-        <img width="1723" height="238" class="name" alt="Manuel Valls Fernández" src="/assets/common/nombre.svg" />
+        <img width="1723" height="238" class="name" alt="{{ .Title }}" src="/assets/common/nombre.svg" />
         <div class="social">
 
           <a href="https://www.facebook.com/mvallsfernandez/">

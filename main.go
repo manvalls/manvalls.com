@@ -75,6 +75,8 @@ func getProfileImage() string {
 type PageData struct {
 	ProfileImageURL string
 	Locale          string
+	Title           string
+	Description     string
 }
 
 var matcher = language.NewMatcher([]language.Tag{
@@ -112,15 +114,30 @@ func getLocale(r *http.Request) string {
 func main() {
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
 		url := getProfileImage()
+		locale := getLocale(r)
+		pageData := PageData{}
 
-		t.ExecuteTemplate(rw, "index", PageData{
-			ProfileImageURL: url,
-			Locale:          getLocale(r),
-		})
+		switch locale {
+		case "es":
+			pageData = PageData{
+				ProfileImageURL: url,
+				Locale:          locale,
+				Title:           "Manuel Valls Fernández",
+				Description:     "Hola! 😎 Aquí te dejo las cosas que me gustan, enlaces a mis redes sociales y otras mierdas, a seguir bien! 🤘",
+			}
+		case "en":
+			pageData = PageData{
+				ProfileImageURL: url,
+				Locale:          locale,
+				Title:           "Manuel Valls Fernández",
+				Description:     "Hi there! 😎 Here you'll find things I like, social media links and some more random stuff, keep it up! 🤘",
+			}
+		}
+
+		t.ExecuteTemplate(rw, "index", pageData)
 	})
 
 	http.HandleFunc("/top-trakt.js", handleTopTrakt)
-
 	http.Handle("/assets/", http.FileServer(http.FS(assets)))
 	http.ListenAndServe(":8090", nil)
 }
