@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-type TraktRating struct {
+type TraktFavourite struct {
 	Show  *TraktShow  `json:"show"`
 	Movie *TraktMovie `json:"movie"`
 }
@@ -74,30 +74,30 @@ func getMoviePoster(id string) string {
 	return result
 }
 
-var traktTopRatedMux = sync.Mutex{}
-var traktTopRatedLastUpdate = time.Unix(0, 0)
-var traktTopRated = []TraktRating{}
+var traktFavouritesMux = sync.Mutex{}
+var traktFavouritesLastUpdate = time.Unix(0, 0)
+var traktFavourites = []TraktFavourite{}
 
-func getTraktTopRated() []TraktRating {
-	traktTopRatedMux.Lock()
-	defer traktTopRatedMux.Unlock()
+func getTraktFavourites() []TraktFavourite {
+	traktFavouritesMux.Lock()
+	defer traktFavouritesMux.Unlock()
 
-	if time.Since(traktTopRatedLastUpdate) < time.Hour {
-		return traktTopRated
+	if time.Since(traktFavouritesLastUpdate) < time.Hour {
+		return traktFavourites
 	}
 
 	client := &http.Client{}
-	req, _ := http.NewRequest("GET", "https://api.trakt.tv/users/"+TRAKT_USER+"/ratings/all/10?limit=12", nil)
+	req, _ := http.NewRequest("GET", "https://api.trakt.tv/users/"+TRAKT_USER+"/lists/favourites/items?limit=12", nil)
 	req.Header.Set("trakt-api-version", "2")
 	req.Header.Set("trakt-api-key", TRAKT_API_KEY)
 	res, _ := client.Do(req)
 
-	ratings := traktTopRated
-	json.NewDecoder(res.Body).Decode(&ratings)
+	favourites := traktFavourites
+	json.NewDecoder(res.Body).Decode(&favourites)
 
-	traktTopRatedLastUpdate = time.Now()
-	traktTopRated = ratings
-	return ratings
+	traktFavouritesLastUpdate = time.Now()
+	traktFavourites = favourites
+	return favourites
 }
 
 type TopTraktData struct {
@@ -105,7 +105,7 @@ type TopTraktData struct {
 }
 
 func getTopTraktImageLinks() []ImageLink {
-	ratings := getTraktTopRated()
+	ratings := getTraktFavourites()
 	links := []ImageLink{}
 
 	for _, rating := range ratings {
