@@ -59,12 +59,13 @@
       cursor: pointer;
     }
 
-    .profile-row {
+    div.profile-row {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       margin-bottom: 40px;
+      width: 90%;
     }
 
     .profile-pic {
@@ -97,6 +98,12 @@
       width: 35px;
       height: auto;
       margin: 5px;
+    }
+
+    .social img.borderless {
+      width: 31px;
+      height: auto;
+      margin: 5px 7px;
     }
 
     .hobbies {
@@ -315,12 +322,14 @@
         <img width="1723" height="238" class="name" alt="{{ .Title }}" src="/assets/common/nombre.svg" />
         <div class="social">
 
-          <a href="https://www.facebook.com/mvallsfernandez/">
-            <img width="254" height="261" alt="{{ .Social.Facebook }}" src="/assets/common/logos/facebook.svg" />
+          <a href="https://twitter.com/manvalls1">
+            <img class="borderless" width="210" height="219" alt="{{ .Social.Twitter }}"
+              src="/assets/common/logos/twitter.svg" />
           </a>
 
-          <a href="https://www.instagram.com/manvalls/">
-            <img width="252" height="260" alt="{{ .Social.Instagram }}" src="/assets/common/logos/instagram.svg" />
+          <a href="https://www.reddit.com/user/manvalls">
+            <img class="borderless" width="222" height="220" alt="{{ .Social.Reddit }}"
+              src="/assets/common/logos/reddit.svg" />
           </a>
 
           <a href="https://www.linkedin.com/in/manvalls/">
@@ -329,6 +338,14 @@
 
           <a href="https://github.com/manvalls/">
             <img width="236" height="233" alt="{{ .Social.Github }}" src="/assets/common/logos/github.svg" />
+          </a>
+
+          <a href="https://www.facebook.com/mvallsfernandez/">
+            <img width="254" height="261" alt="{{ .Social.Facebook }}" src="/assets/common/logos/facebook.svg" />
+          </a>
+
+          <a href="https://www.instagram.com/manvalls/">
+            <img width="252" height="260" alt="{{ .Social.Instagram }}" src="/assets/common/logos/instagram.svg" />
           </a>
 
           <a href="https://open.spotify.com/user/41oflqp0vakkg21hgyl5i7p0c?si=41ad1e5129a442e7">

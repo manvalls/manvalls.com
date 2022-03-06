@@ -90,6 +90,8 @@ type Social struct {
 	Oculus    string
 	Discord   string
 	Steam     string
+	Twitter   string
+	Reddit    string
 }
 
 type Hobbies struct {
@@ -200,6 +202,8 @@ func main() {
 					Oculus:    "Oculus",
 					Discord:   "Discord",
 					Steam:     "Steam",
+					Twitter:   "Twitter",
+					Reddit:    "Reddit",
 				},
 				Hobbies: Hobbies{
 					Title:     "Cosas que me gustan:",
@@ -256,6 +260,8 @@ func main() {
 					Oculus:    "Oculus",
 					Discord:   "Discord",
 					Steam:     "Steam",
+					Twitter:   "Twitter",
+					Reddit:    "Reddit",
 				},
 				Hobbies: Hobbies{
 					Title:     "Things I like:",
