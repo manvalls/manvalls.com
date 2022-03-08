@@ -94,12 +94,14 @@ type Social struct {
 	Reddit    string
 }
 
+type HobbyInfo struct {
+	Description string
+	Emoji       string
+}
+
 type Hobbies struct {
-	Title     string
-	Coffee    string
-	Japanese  string
-	LiveMusic string
-	VR        string
+	Title string
+	List  []HobbyInfo
 }
 
 type About struct {
@@ -206,11 +208,53 @@ func main() {
 					Reddit:    "Reddit",
 				},
 				Hobbies: Hobbies{
-					Title:     "Cosas que me gustan:",
-					Coffee:    "Café de especialidad",
-					Japanese:  "Aprender Japonés",
-					LiveMusic: "Música en directo",
-					VR:        "Realidad virtual",
+					Title: "Cosas que me gustan:",
+					List: []HobbyInfo{
+						{
+							Emoji:       "☕",
+							Description: "Café",
+						},
+						{
+							Emoji:       "🇯🇵",
+							Description: "Aprender Japonés",
+						},
+						{
+							Emoji:       "🧑🏻‍💻",
+							Description: "Desarrollo de Software",
+						},
+						{
+							Emoji:       "🎌",
+							Description: "Música Japonesa",
+						},
+						{
+							Emoji:       "🤖",
+							Description: "Realidad virtual",
+						},
+						{
+							Emoji:       "👩🏻‍🎤",
+							Description: "Música en directo",
+						},
+						{
+							Emoji:       "🍥",
+							Description: "Anime y Manga",
+						},
+						{
+							Emoji:       "🎮",
+							Description: "Videojuegos",
+						},
+						{
+							Emoji:       "🎞️",
+							Description: "Pelis y series",
+						},
+						{
+							Emoji:       "🎼",
+							Description: "Música",
+						},
+						{
+							Emoji:       "📖",
+							Description: "Leer",
+						},
+					},
 				},
 				About: About{
 					Title:        "Sobre mí:",
@@ -264,11 +308,53 @@ func main() {
 					Reddit:    "Reddit",
 				},
 				Hobbies: Hobbies{
-					Title:     "Things I like:",
-					Coffee:    "Specialty coffee",
-					Japanese:  "Learning Japanese",
-					LiveMusic: "Live music",
-					VR:        "Virtual reality",
+					Title: "Things I like:",
+					List: []HobbyInfo{
+						{
+							Emoji:       "☕",
+							Description: "Coffee",
+						},
+						{
+							Emoji:       "🇯🇵",
+							Description: "Learning Japanese",
+						},
+						{
+							Emoji:       "🧑🏻‍💻",
+							Description: "Software development",
+						},
+						{
+							Emoji:       "🎌",
+							Description: "Japanese music",
+						},
+						{
+							Emoji:       "🤖",
+							Description: "Virtual reality",
+						},
+						{
+							Emoji:       "👩🏻‍🎤",
+							Description: "Live music",
+						},
+						{
+							Emoji:       "🍥",
+							Description: "Anime & Manga",
+						},
+						{
+							Emoji:       "🎮",
+							Description: "Videogames",
+						},
+						{
+							Emoji:       "🎞️",
+							Description: "Movies & TV",
+						},
+						{
+							Emoji:       "🎼",
+							Description: "Music",
+						},
+						{
+							Emoji:       "📖",
+							Description: "Reading",
+						},
+					},
 				},
 				About: About{
 					Title:        "About me:",

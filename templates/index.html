@@ -21,7 +21,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Special+Elite&display=swap" rel="stylesheet">
 
   <style>
     img {
@@ -127,6 +127,17 @@
       align-items: center;
       gap: 30px 50px;
       margin-bottom: 50px;
+    }
+
+    .hobbies>div.emoji-list {
+      font-size: 16px;
+      font-family: Noto Sans;
+      gap: 15px 10px;
+    }
+
+    .hobbies>div.emoji-list>div {
+      border: 1px solid #adadad;
+      padding: 6px 10px 7px 8px;
     }
 
     div.videos {
@@ -390,11 +401,12 @@
     </div>
     <div class="hobbies">
       <img alt="{{ .Hobbies.Title }}" src="/assets/{{ .Locale }}/things_i_like.svg" />
-      <div>
-        <img alt="{{ .Hobbies.Coffee }}" src="/assets/{{ .Locale }}/coffee.svg" />
-        <img alt="{{ .Hobbies.Japanese }}" src="/assets/{{ .Locale }}/japanese.svg" />
-        <img alt="{{ .Hobbies.LiveMusic }}" src="/assets/{{ .Locale }}/live_music.svg" />
-        <img alt="{{ .Hobbies.VR }}" src="/assets/{{ .Locale }}/vr.svg" />
+      <div class="emoji-list">
+        {{ range .Hobbies.List }}
+        <div>
+          {{ .Emoji }} {{ .Description }}
+        </div>
+        {{ end }}
       </div>
       <img alt="{{ .About.Title }}" src="/assets/{{ .Locale }}/about.svg" />
       <div>
