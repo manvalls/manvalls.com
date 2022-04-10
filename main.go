@@ -79,7 +79,6 @@ type Languages struct {
 
 type Social struct {
 	Facebook  string
-	Instagram string
 	Linkedin  string
 	Github    string
 	Spotify   string
@@ -92,6 +91,7 @@ type Social struct {
 	Steam     string
 	Twitter   string
 	Reddit    string
+	VRChat    string
 }
 
 type HobbyInfo struct {
@@ -193,7 +193,6 @@ func main() {
 				},
 				Social: Social{
 					Facebook:  "Facebook",
-					Instagram: "Instagram",
 					Linkedin:  "LinkedIn",
 					Github:    "GitHub",
 					Spotify:   "Spotify",
@@ -206,6 +205,7 @@ func main() {
 					Steam:     "Steam",
 					Twitter:   "Twitter",
 					Reddit:    "Reddit",
+					VRChat:    "VRChat",
 				},
 				Hobbies: Hobbies{
 					Title: "Cosas que me gustan:",
@@ -293,7 +293,6 @@ func main() {
 				},
 				Social: Social{
 					Facebook:  "Facebook",
-					Instagram: "Instagram",
 					Linkedin:  "LinkedIn",
 					Github:    "GitHub",
 					Spotify:   "Spotify",
@@ -306,6 +305,7 @@ func main() {
 					Steam:     "Steam",
 					Twitter:   "Twitter",
 					Reddit:    "Reddit",
+					VRChat:    "VRChat",
 				},
 				Hobbies: Hobbies{
 					Title: "Things I like:",
