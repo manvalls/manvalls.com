@@ -8,8 +8,7 @@
   <base target="_blank">
   <title>{{ .Title }}</title>
   <meta name="description" content="{{ .Description }}">
-  <meta property="og:title" content="{{ .Title }}">
-  <meta property="og:image" content="{{ .ProfileImageURL }}">
+  <meta property="og:title" content="/profile.jpg">
   <meta property="og:description" content="{{ .Description }}">
 
   <script>
@@ -192,8 +191,9 @@
     }
 
     #top-trakt img {
-      max-height: 150px;
-      width: auto;
+      aspect-ratio: 80 / 120;
+      width: 19%;
+      min-width: 80px;
     }
 
     .top-trakt-link {
@@ -224,7 +224,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      max-width: 500px;
+      max-width: 560px;
       margin-bottom: 70px;
     }
 
@@ -241,6 +241,26 @@
       position: absolute;
       right: 20px;
       top: 10px;
+    }
+
+    .grouvee_container {
+      width: 16%;
+      min-width: 80px;
+    }
+
+    @media (max-width: 554px) {
+      .grouvee_container {
+        width: 20%;
+        min-width: 80px;
+      }
+
+      div.videogames {
+        max-width: 450px;
+      }
+    }
+
+    .grouvee_container img {
+      width: 100%;
     }
 
     .gr_grid_branding {
@@ -267,6 +287,20 @@
       justify-content: center;
       gap: 0px 5px;
       flex-wrap: wrap;
+    }
+
+    #gr_grid_widget_1643220741 {
+      width: 100%;
+    }
+
+    .gr_grid_container .gr_grid_book_container {
+      width: 19%;
+      min-width: 80px;
+    }
+
+    .gr_grid_container img {
+      aspect-ratio: 80 / 120;
+      width: 100%;
     }
 
     #gr_grid_widget_1643220741 h2 {
@@ -332,11 +366,16 @@
     </div>
     <div class="profile-row">
       <div class="profile-pic">
-        <img importance="high" width="250" height="250" src="{{ .ProfileImageURL }}" />
+        <img importance="high" width="250" height="250" src="/profile.jpg" />
       </div>
       <div class="name-and-social">
         <img width="1723" height="238" class="name" alt="{{ .Title }}" src="/assets/common/nombre.svg" />
         <div class="social">
+          <a href="https://twitter.com/lazymanuel" title="@lazymanuel">
+            <img class="borderless" width="210" height="219" alt="{{ .Social.Twitter }}"
+              src="/assets/common/logos/twitter.svg" />
+          </a>
+
           <a href="https://discordapp.com/users/568501799368261632" title="manvalls#4916">
             <img width="217" height="218" alt="{{ .Social.Discord }}" src="/assets/common/logos/discord.svg" />
           </a>
@@ -344,16 +383,6 @@
           <a href="https://vrchat.com/home/user/usr_fd567cee-ecb4-43c0-8d99-61917763daec" title="manvalls">
             <img class="borderless" width="281" height="308" alt="{{ .Social.VRChat }}"
               src="/assets/common/logos/vrchat.svg" />
-          </a>
-
-          <a href="https://twitter.com/lazymanuel" title="@lazymanuel">
-            <img class="borderless" width="210" height="219" alt="{{ .Social.Twitter }}"
-              src="/assets/common/logos/twitter.svg" />
-          </a>
-
-          <a href="https://www.reddit.com/user/manvalls" title="manvalls">
-            <img class="borderless" width="222" height="220" alt="{{ .Social.Reddit }}"
-              src="/assets/common/logos/reddit.svg" />
           </a>
 
           <a href="https://www.linkedin.com/in/manvalls/" title="Manuel Valls Fernández">
@@ -368,8 +397,23 @@
             <img width="254" height="261" alt="{{ .Social.Facebook }}" src="/assets/common/logos/facebook.svg" />
           </a>
 
-          <a href="https://open.spotify.com/user/41oflqp0vakkg21hgyl5i7p0c?si=41ad1e5129a442e7">
-            <img width="251" height="243" alt="{{ .Social.Spotify }}" src="/assets/common/logos/spotify.svg" />
+          <a href="https://www.reddit.com/user/manvalls" title="manvalls">
+            <img class="borderless" width="222" height="220" alt="{{ .Social.Reddit }}"
+              src="/assets/common/logos/reddit.svg" />
+          </a>
+
+          <a href="https://account.xbox.com/profile?gamertag=manvalls" title="manvalls">
+            <img class="borderless" width="248" height="261" alt="{{ .Social.Xbox }}"
+              src="/assets/common/logos/xbox.svg" />
+          </a>
+
+          <a href="https://www.oculus.com/deeplink/?action=view&path=%2Fprofile%2F101811735605449&utm_medium=share&utm_source=oculus"
+            title="manvalls">
+            <img width="237" height="239" alt="{{ .Social.Oculus }}" src="/assets/common/logos/oculus.svg" />
+          </a>
+
+          <a href="https://steamcommunity.com/id/manvalls/" title="manvalls">
+            <img width="219" height="220" alt="{{ .Social.Steam }}" src="/assets/common/logos/steam.svg" />
           </a>
 
           <a href="https://www.last.fm/user/manvalls" title="manvalls">
@@ -385,16 +429,8 @@
           </a>
 
           <a href="https://www.grouvee.com/user/manvalls/" title="manvalls">
-            <img width="182" height="209" alt="{{ .Social.Grouvee }}" src="/assets/common/logos/grouvee.svg" />
-          </a>
-
-          <a href="https://www.oculus.com/deeplink/?action=view&path=%2Fprofile%2F101811735605449&utm_medium=share&utm_source=oculus"
-            title="manvalls">
-            <img width="237" height="239" alt="{{ .Social.Oculus }}" src="/assets/common/logos/oculus.svg" />
-          </a>
-
-          <a href="https://steamcommunity.com/id/manvalls/" title="manvalls">
-            <img width="219" height="220" alt="{{ .Social.Steam }}" src="/assets/common/logos/steam.svg" />
+            <img class="borderless" width="182" height="209" alt="{{ .Social.Grouvee }}"
+              src="/assets/common/logos/grouvee.svg" />
           </a>
 
         </div>
@@ -444,7 +480,7 @@
     <div class="videogames">
       <img alt="{{ .Misc.FavouriteGames }}" src="/assets/{{ .Locale }}/favourite-games.svg" />
       <div id="grouvee_widget_738705"></div>
-      <script async src="https://www.grouvee.com/widgets/shelf/738705/?number=15"></script>
+      <script async src="https://www.grouvee.com/widgets/shelf/738705/?number=24"></script>
       <div class="videogames-link">
         <a
           href="https://www.grouvee.com/user/manvalls/shelves/738705-favourites/?utm_medium=api&utm_source=shelf_widget"><img
@@ -454,7 +490,7 @@
     <div class="books">
       <img alt="{{ .Misc.FavouriteBooks }}" src="/assets/{{ .Locale }}/favourite-books.svg" />
       <div id="gr_grid_widget_1643220741"></div>
-      <script
+      <script async
         src="https://www.goodreads.com/review/grid_widget/146308828.Manuel's%20favourites%20book%20montage?cover_size=medium&hide_link=&hide_title=&num_books=20&order=a&shelf=favourites&sort=date_added&widget_id=1643220741"></script>
       <div class="books-link">
         <a href="https://www.goodreads.com/user/show/146308828-manuel-valls-fern-ndez"><img alt="{{ .Misc.MoreBooks }}"

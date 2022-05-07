@@ -4,6 +4,7 @@ import (
 	"embed"
 	"encoding/json"
 	"html/template"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"sync"
@@ -26,9 +27,9 @@ type tokenResponse struct {
 
 var profileImageMux = sync.Mutex{}
 var profileImageLastUpdate = time.Unix(0, 0)
-var profileImage = ""
+var profileImage = []byte{}
 
-func getProfileImage() string {
+func getProfileImage() []byte {
 	profileImageMux.Lock()
 	defer profileImageMux.Unlock()
 
@@ -67,8 +68,20 @@ func getProfileImage() string {
 		return profileImage
 	}
 
+	req, _ = http.NewRequest("GET", location, nil)
+
+	resp, err = client.Do(req)
+	if err != nil {
+		return profileImage
+	}
+
+	imageData, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return profileImage
+	}
+
 	profileImageLastUpdate = time.Now()
-	profileImage = location
+	profileImage = imageData
 	return profileImage
 }
 
@@ -81,7 +94,7 @@ type Social struct {
 	Facebook  string
 	Linkedin  string
 	Github    string
-	Spotify   string
+	Xbox      string
 	Lastfm    string
 	Trakt     string
 	Goodreads string
@@ -131,10 +144,9 @@ type Misc struct {
 }
 
 type PageData struct {
-	ProfileImageURL string
-	Locale          string
-	Title           string
-	Description     string
+	Locale      string
+	Title       string
+	Description string
 	Languages
 	Social
 	Hobbies
@@ -176,17 +188,15 @@ func getLocale(r *http.Request) string {
 
 func main() {
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-		url := getProfileImage()
 		locale := getLocale(r)
 		pageData := PageData{}
 
 		switch locale {
 		case "es":
 			pageData = PageData{
-				ProfileImageURL: url,
-				Locale:          locale,
-				Title:           "Manuel Valls Fernández",
-				Description:     "Hola! 😎 Aquí te dejo las cosas que me gustan, enlaces a mis redes sociales y otras mierdas, a seguir bien! 🤘",
+				Locale:      locale,
+				Title:       "Manuel Valls Fernández",
+				Description: "Hola! 😎 Aquí te dejo las cosas que me gustan, enlaces a mis redes sociales y otras mierdas, a seguir bien! 🤘",
 				Languages: Languages{
 					English: "English",
 					Spanish: "Español",
@@ -195,7 +205,7 @@ func main() {
 					Facebook:  "Facebook",
 					Linkedin:  "LinkedIn",
 					Github:    "GitHub",
-					Spotify:   "Spotify",
+					Xbox:      "Xbox",
 					Lastfm:    "last.fm",
 					Trakt:     "Trakt",
 					Goodreads: "goodreads",
@@ -283,10 +293,9 @@ func main() {
 			}
 		case "en":
 			pageData = PageData{
-				ProfileImageURL: url,
-				Locale:          locale,
-				Title:           "Manuel Valls Fernández",
-				Description:     "Hi there! 😎 Here you'll find things I like, social media links and some more random stuff, keep it up! 🤘",
+				Locale:      locale,
+				Title:       "Manuel Valls Fernández",
+				Description: "Hi there! 😎 Here you'll find things I like, social media links and some more random stuff, keep it up! 🤘",
 				Languages: Languages{
 					English: "English",
 					Spanish: "Español",
@@ -295,7 +304,7 @@ func main() {
 					Facebook:  "Facebook",
 					Linkedin:  "LinkedIn",
 					Github:    "GitHub",
-					Spotify:   "Spotify",
+					Xbox:      "Xbox",
 					Lastfm:    "last.fm",
 					Trakt:     "Trakt",
 					Goodreads: "goodreads",
@@ -384,6 +393,10 @@ func main() {
 		}
 
 		t.ExecuteTemplate(rw, "index", pageData)
+	})
+
+	http.HandleFunc("/profile.jpg", func(w http.ResponseWriter, r *http.Request) {
+		w.Write(getProfileImage())
 	})
 
 	http.HandleFunc("/top-trakt.js", handleTopTrakt)

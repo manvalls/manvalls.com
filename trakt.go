@@ -87,7 +87,7 @@ func getTraktFavourites() []TraktFavourite {
 	}
 
 	client := &http.Client{}
-	req, _ := http.NewRequest("GET", "https://api.trakt.tv/users/"+TRAKT_USER+"/lists/favourites/items?limit=12", nil)
+	req, _ := http.NewRequest("GET", "https://api.trakt.tv/users/"+TRAKT_USER+"/lists/favourites/items?limit=20", nil)
 	req.Header.Set("trakt-api-version", "2")
 	req.Header.Set("trakt-api-key", TRAKT_API_KEY)
 	res, _ := client.Do(req)
