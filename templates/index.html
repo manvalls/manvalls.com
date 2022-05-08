@@ -90,7 +90,7 @@
     .social {
       display: flex;
       flex-wrap: wrap;
-      max-width: 350px;
+      max-width: 300px;
     }
 
     .social a {
@@ -100,13 +100,13 @@
     .social img {
       width: 35px;
       height: auto;
-      margin: 5px;
+      margin: 6px;
     }
 
     .social img.borderless {
       width: 31px;
       height: auto;
-      margin: 7px;
+      margin: 8px;
     }
 
     .hobbies {
@@ -184,6 +184,23 @@
 
     .watch-recommendations>img {
       margin-bottom: 30px;
+    }
+
+    div.game-accounts {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      margin-bottom: 60px;
+    }
+
+    .game-accounts>img {
+      margin-bottom: 20px;
+    }
+
+    .game-accounts>div.social {
+      max-width: 250px;
     }
 
     #top-trakt {
@@ -380,9 +397,8 @@
             <img width="217" height="218" alt="{{ .Social.Discord }}" src="/assets/common/logos/discord.svg" />
           </a>
 
-          <a href="https://vrchat.com/home/user/usr_fd567cee-ecb4-43c0-8d99-61917763daec" title="manvalls">
-            <img class="borderless" width="281" height="308" alt="{{ .Social.VRChat }}"
-              src="/assets/common/logos/vrchat.svg" />
+          <a href="https://www.facebook.com/mvallsfernandez/" title="Manuel Valls Fernández">
+            <img width="254" height="261" alt="{{ .Social.Facebook }}" src="/assets/common/logos/facebook.svg" />
           </a>
 
           <a href="https://www.linkedin.com/in/manvalls/" title="Manuel Valls Fernández">
@@ -393,27 +409,9 @@
             <img width="236" height="233" alt="{{ .Social.Github }}" src="/assets/common/logos/github.svg" />
           </a>
 
-          <a href="https://www.facebook.com/mvallsfernandez/" title="Manuel Valls Fernández">
-            <img width="254" height="261" alt="{{ .Social.Facebook }}" src="/assets/common/logos/facebook.svg" />
-          </a>
-
           <a href="https://www.reddit.com/user/manvalls" title="manvalls">
             <img class="borderless" width="222" height="220" alt="{{ .Social.Reddit }}"
               src="/assets/common/logos/reddit.svg" />
-          </a>
-
-          <a href="https://account.xbox.com/profile?gamertag=manvalls" title="manvalls">
-            <img class="borderless" width="248" height="261" alt="{{ .Social.Xbox }}"
-              src="/assets/common/logos/xbox.svg" />
-          </a>
-
-          <a href="https://www.oculus.com/deeplink/?action=view&path=%2Fprofile%2F101811735605449&utm_medium=share&utm_source=oculus"
-            title="manvalls">
-            <img width="237" height="239" alt="{{ .Social.Oculus }}" src="/assets/common/logos/oculus.svg" />
-          </a>
-
-          <a href="https://steamcommunity.com/id/manvalls/" title="manvalls">
-            <img width="219" height="220" alt="{{ .Social.Steam }}" src="/assets/common/logos/steam.svg" />
           </a>
 
           <a href="https://www.last.fm/user/manvalls" title="manvalls">
@@ -466,6 +464,26 @@
       <div class="quotes-link">
         <a href="https://www.goodreads.com/quotes/list/146308828-manuel-valls-fern-ndez"><img
             alt="{{ .Misc.MoreQuotes }}" src="/assets/{{ .Locale }}/quotes.svg" /></a>
+      </div>
+    </div>
+    <div class="game-accounts">
+      <img alt="{{ .Misc.GameAccounts }}" src="/assets/{{ .Locale }}/game-accounts.svg" />
+      <div class="social">
+        <a href="https://account.xbox.com/profile?gamertag=manvalls" title="manvalls">
+          <img class="borderless" width="248" height="261" alt="{{ .Social.Xbox }}"
+            src="/assets/common/logos/xbox.svg" />
+        </a>
+        <a href="https://www.oculus.com/deeplink/?action=view&path=%2Fprofile%2F101811735605449&utm_medium=share&utm_source=oculus"
+          title="manvalls">
+          <img width="237" height="239" alt="{{ .Social.Oculus }}" src="/assets/common/logos/oculus.svg" />
+        </a>
+        <a href="https://vrchat.com/home/user/usr_fd567cee-ecb4-43c0-8d99-61917763daec" title="manvalls">
+          <img class="borderless" width="281" height="308" alt="{{ .Social.VRChat }}"
+            src="/assets/common/logos/vrchat.svg" />
+        </a>
+        <a href="https://steamcommunity.com/id/manvalls/" title="manvalls">
+          <img width="219" height="220" alt="{{ .Social.Steam }}" src="/assets/common/logos/steam.svg" />
+        </a>
       </div>
     </div>
     <div class="watch-recommendations">

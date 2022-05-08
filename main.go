@@ -127,6 +127,7 @@ type About struct {
 
 type Misc struct {
 	MoreQuotes      string
+	GameAccounts    string
 	FavouriteMovies string
 	MoreMovies      string
 	FavouriteGames  string
@@ -275,6 +276,7 @@ func main() {
 				},
 				Misc: Misc{
 					MoreQuotes:      "Más citas",
+					GameAccounts:    "Cuentas de juego:",
 					FavouriteMovies: "Pelis y series favoritas:",
 					MoreMovies:      "Ver más",
 					FavouriteGames:  "Juegos favoritos:",
@@ -374,6 +376,7 @@ func main() {
 				},
 				Misc: Misc{
 					MoreQuotes:      "More quotes:",
+					GameAccounts:    "Game accounts:",
 					FavouriteMovies: "Favourite movies and shows:",
 					MoreMovies:      "View more",
 					FavouriteGames:  "Favourite games:",
