@@ -105,6 +105,12 @@ type Social struct {
 	Twitter   string
 	Reddit    string
 	VRChat    string
+	YouTube   string
+	EA        string
+	Riot      string
+	Epic      string
+	Ubisoft   string
+	GOG       string
 }
 
 type HobbyInfo struct {
@@ -217,6 +223,12 @@ func main() {
 					Twitter:   "Twitter",
 					Reddit:    "Reddit",
 					VRChat:    "VRChat",
+					YouTube:   "YouTube",
+					EA:        "EA",
+					Riot:      "Riot",
+					Epic:      "Epic Games",
+					Ubisoft:   "Ubisoft",
+					GOG:       "GOG",
 				},
 				Hobbies: Hobbies{
 					Title: "Cosas que me gustan:",
@@ -317,6 +329,12 @@ func main() {
 					Twitter:   "Twitter",
 					Reddit:    "Reddit",
 					VRChat:    "VRChat",
+					YouTube:   "YouTube",
+					EA:        "EA",
+					Riot:      "Riot",
+					Epic:      "Epic Games",
+					Ubisoft:   "Ubisoft",
+					GOG:       "GOG",
 				},
 				Hobbies: Hobbies{
 					Title: "Things I like:",
