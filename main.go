@@ -111,6 +111,12 @@ type Social struct {
 	Epic      string
 	Ubisoft   string
 	GOG       string
+
+	CopyButton    string
+	CloseButton   string
+	CopiedMessage string
+	EALabel       string
+	RiotLabel     string
 }
 
 type HobbyInfo struct {
@@ -229,6 +235,12 @@ func main() {
 					Epic:      "Epic Games",
 					Ubisoft:   "Ubisoft",
 					GOG:       "GOG",
+
+					CopyButton:    "Copiar",
+					CloseButton:   "Cerrar",
+					CopiedMessage: "Copiado al portapapeles",
+					EALabel:       "EA ID",
+					RiotLabel:     "Riot ID",
 				},
 				Hobbies: Hobbies{
 					Title: "Cosas que me gustan:",
@@ -335,6 +347,12 @@ func main() {
 					Epic:      "Epic Games",
 					Ubisoft:   "Ubisoft",
 					GOG:       "GOG",
+
+					CopyButton:    "Copy",
+					CloseButton:   "Close",
+					CopiedMessage: "Copied to your clipboard",
+					EALabel:       "EA ID",
+					RiotLabel:     "Riot ID",
 				},
 				Hobbies: Hobbies{
 					Title: "Things I like:",

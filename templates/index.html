@@ -468,10 +468,10 @@
     <div class="modal">
       <div class="x-modal" onclick="closeModal()">✖</div>
       <div id="modal-content"></div>
-      <div id="copied-notice">Copied to your clipboard</div>
+      <div id="copied-notice">{{ .Social.CopiedMessage }}</div>
       <div class="modal-buttons">
-        <div class="copy-modal" onclick="copyID()">Copy</div>
-        <div class="close-modal" onclick="closeModal()">Close</div>
+        <div class="copy-modal" onclick="copyID()">{{ .Social.CopyButton }}</div>
+        <div class="close-modal" onclick="closeModal()">{{ .Social.CloseButton }}</div>
       </div>
     </div>
   </div>
@@ -591,7 +591,7 @@
         <a href="https://steamcommunity.com/id/manvalls/" title="manvalls">
           <img width="219" height="220" alt="{{ .Social.Steam }}" src="/assets/common/logos/steam.svg" />
         </a>
-        <a onclick="showModal('Riot ID: manvalls#1992', 'manvalls#1992')" style="cursor: pointer;"
+        <a onclick="showModal('{{ .Social.RiotLabel }}: manvalls#1992', 'manvalls#1992')" style="cursor: pointer;"
           title="manvalls#1992">
           <img width="331" height="330" alt="{{ .Social.Riot }}" class="borderless"
             src="/assets/common/logos/riot.svg" />
@@ -600,7 +600,8 @@
           <img class="borderless" width="294" height="284" alt="{{ .Social.Epic }}"
             src="/assets/common/logos/epic.svg" />
         </a>
-        <a onclick="showModal('EA ID: manvallsf', 'manvallsf')" style="cursor: pointer;" title="manvallsf">
+        <a onclick="showModal('{{ .Social.EALabel }}: manvallsf', 'manvallsf')" style="cursor: pointer;"
+          title="manvallsf">
           <img width="201" height="235" alt="{{ .Social.EA }}" class="borderless" style="width: 27px;margin: 10px;"
             src="/assets/common/logos/ea.svg" />
         </a>
