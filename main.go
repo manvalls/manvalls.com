@@ -92,6 +92,7 @@ type Languages struct {
 
 type Social struct {
 	Facebook  string
+	Instagram string
 	Linkedin  string
 	Github    string
 	Xbox      string
@@ -216,6 +217,7 @@ func main() {
 				},
 				Social: Social{
 					Facebook:  "Facebook",
+					Instagram: "Instagram",
 					Linkedin:  "LinkedIn",
 					Github:    "GitHub",
 					Xbox:      "Xbox",
@@ -328,6 +330,7 @@ func main() {
 				},
 				Social: Social{
 					Facebook:  "Facebook",
+					Instagram: "Instagram",
 					Linkedin:  "LinkedIn",
 					Github:    "GitHub",
 					Xbox:      "Xbox",
