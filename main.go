@@ -252,16 +252,8 @@ func main() {
 							Description: "Café",
 						},
 						{
-							Emoji:       "🇯🇵",
-							Description: "Aprender Japonés",
-						},
-						{
-							Emoji:       "🧑🏻‍💻",
+							Emoji:       "👨‍💻",
 							Description: "Desarrollo de Software",
-						},
-						{
-							Emoji:       "🎌",
-							Description: "Música Japonesa",
 						},
 						{
 							Emoji:       "🤖",
@@ -270,10 +262,6 @@ func main() {
 						{
 							Emoji:       "👩🏻‍🎤",
 							Description: "Música en directo",
-						},
-						{
-							Emoji:       "🍥",
-							Description: "Anime y Manga",
 						},
 						{
 							Emoji:       "🎮",
@@ -365,16 +353,8 @@ func main() {
 							Description: "Coffee",
 						},
 						{
-							Emoji:       "🇯🇵",
-							Description: "Learning Japanese",
-						},
-						{
-							Emoji:       "🧑🏻‍💻",
+							Emoji:       "👨‍💻",
 							Description: "Software development",
-						},
-						{
-							Emoji:       "🎌",
-							Description: "Japanese music",
 						},
 						{
 							Emoji:       "🤖",
@@ -383,10 +363,6 @@ func main() {
 						{
 							Emoji:       "👩🏻‍🎤",
 							Description: "Live music",
-						},
-						{
-							Emoji:       "🍥",
-							Description: "Anime & Manga",
 						},
 						{
 							Emoji:       "🎮",
