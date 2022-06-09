@@ -112,6 +112,7 @@ type Social struct {
 	Epic      string
 	Ubisoft   string
 	GOG       string
+	Chess     string
 
 	CopyButton    string
 	CloseButton   string
@@ -237,6 +238,7 @@ func main() {
 					Epic:      "Epic Games",
 					Ubisoft:   "Ubisoft",
 					GOG:       "GOG",
+					Chess:     "Chess.com",
 
 					CopyButton:    "Copiar",
 					CloseButton:   "Cerrar",
@@ -262,6 +264,10 @@ func main() {
 						{
 							Emoji:       "👩🏻‍🎤",
 							Description: "Música en directo",
+						},
+						{
+							Emoji:       "🎌",
+							Description: "Aprender Japonés",
 						},
 						{
 							Emoji:       "🎮",
@@ -338,6 +344,7 @@ func main() {
 					Epic:      "Epic Games",
 					Ubisoft:   "Ubisoft",
 					GOG:       "GOG",
+					Chess:     "Chess.com",
 
 					CopyButton:    "Copy",
 					CloseButton:   "Close",
@@ -363,6 +370,10 @@ func main() {
 						{
 							Emoji:       "👩🏻‍🎤",
 							Description: "Live music",
+						},
+						{
+							Emoji:       "🎌",
+							Description: "Learning Japanese",
 						},
 						{
 							Emoji:       "🎮",
