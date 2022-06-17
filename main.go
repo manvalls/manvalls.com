@@ -376,16 +376,16 @@ func main() {
 							Description: "Live music",
 						},
 						{
-							Emoji:       "🎤",
-							Description: "Karaoke",
-						},
-						{
 							Emoji:       "🎌",
 							Description: "Learning Japanese",
 						},
 						{
 							Emoji:       "🎮",
 							Description: "Videogames",
+						},
+						{
+							Emoji:       "🎤",
+							Description: "Karaoke",
 						},
 						{
 							Emoji:       "🎞️",
