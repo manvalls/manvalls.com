@@ -203,6 +203,7 @@ func getLocale(r *http.Request) string {
 
 func main() {
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+
 		locale := getLocale(r)
 		pageData := PageData{}
 
