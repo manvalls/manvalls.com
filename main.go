@@ -266,6 +266,10 @@ func main() {
 							Description: "Música en directo",
 						},
 						{
+							Emoji:       "🎤",
+							Description: "Karaoke",
+						},
+						{
 							Emoji:       "🎌",
 							Description: "Aprender Japonés",
 						},
@@ -370,6 +374,10 @@ func main() {
 						{
 							Emoji:       "👩🏻‍🎤",
 							Description: "Live music",
+						},
+						{
+							Emoji:       "🎤",
+							Description: "Karaoke",
 						},
 						{
 							Emoji:       "🎌",
