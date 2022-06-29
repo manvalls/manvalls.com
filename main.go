@@ -262,20 +262,32 @@ func main() {
 							Description: "Realidad virtual",
 						},
 						{
+							Emoji:       "🎌",
+							Description: "Aprender Japonés",
+						},
+						{
 							Emoji:       "👩🏻‍🎤",
 							Description: "Música en directo",
+						},
+						{
+							Emoji:       "🍝",
+							Description: "Comer fuera",
 						},
 						{
 							Emoji:       "🎤",
 							Description: "Karaoke",
 						},
 						{
-							Emoji:       "🎌",
-							Description: "Aprender Japonés",
+							Emoji:       "📖",
+							Description: "Leer",
 						},
 						{
 							Emoji:       "🎮",
 							Description: "Videojuegos",
+						},
+						{
+							Emoji:       "🍳",
+							Description: "Cocinar",
 						},
 						{
 							Emoji:       "🎞️",
@@ -286,8 +298,12 @@ func main() {
 							Description: "Música",
 						},
 						{
-							Emoji:       "📖",
-							Description: "Leer",
+							Emoji:       "🎸",
+							Description: "Bajo y guitarra",
+						},
+						{
+							Emoji:       "♟️",
+							Description: "Ajedrez",
 						},
 					},
 				},
@@ -398,6 +414,22 @@ func main() {
 						{
 							Emoji:       "📖",
 							Description: "Reading",
+						},
+						{
+							Emoji:       "🍝",
+							Description: "Eating out",
+						},
+						{
+							Emoji:       "🍳",
+							Description: "Cooking",
+						},
+						{
+							Emoji:       "🎸",
+							Description: "Bass & Guitar",
+						},
+						{
+							Emoji:       "♟️",
+							Description: "Chess",
 						},
 					},
 				},
