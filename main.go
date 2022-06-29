@@ -298,12 +298,12 @@ func main() {
 							Description: "Música",
 						},
 						{
-							Emoji:       "🎸",
-							Description: "Bajo y guitarra",
-						},
-						{
 							Emoji:       "♟️",
 							Description: "Ajedrez",
+						},
+						{
+							Emoji:       "🎸",
+							Description: "Bajo y guitarra",
 						},
 					},
 				},
@@ -424,12 +424,12 @@ func main() {
 							Description: "Cooking",
 						},
 						{
-							Emoji:       "🎸",
-							Description: "Bass & Guitar",
-						},
-						{
 							Emoji:       "♟️",
 							Description: "Chess",
+						},
+						{
+							Emoji:       "🎸",
+							Description: "Bass & Guitar",
 						},
 					},
 				},
