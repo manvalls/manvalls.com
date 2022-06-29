@@ -203,7 +203,6 @@ func getLocale(r *http.Request) string {
 
 func main() {
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-
 		locale := getLocale(r)
 		pageData := PageData{}
 
@@ -212,7 +211,7 @@ func main() {
 			pageData = PageData{
 				Locale:      locale,
 				Title:       "Manuel Valls Fernández",
-				Description: "Hola! 😎 Aquí te dejo las cosas que me gustan, enlaces a mis redes sociales y otras mierdas, a seguir bien! 🤘",
+				Description: "Hola! 😎 Aquí puedes ver las cosas que me gustan, enlaces a mis redes sociales y demás, a seguir bien! 🤘",
 				Languages: Languages{
 					English: "English",
 					Spanish: "Español",
